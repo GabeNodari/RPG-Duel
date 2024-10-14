@@ -1,4 +1,4 @@
-# Projeto de duelo em formato RPG
+# Simulador de duelo em formato RPG
 Este é um projeto de duelo/RPG, com fins de estudo na linguagem C.
 
 **Funcionalidades:**
