@@ -2,14 +2,14 @@
 #include <stdio.h>  
 #include <time.h>   
 
-// Função para randomizar um número
+//Randomizador
 int get_random(int min, int max) { 
 int random;
 random = (rand() % (max - min + 1) + min);
 return random;
 } 
 
-// Função para calcular o dano
+//Função: dano
 int get_damage(int ataque, int defesa) {
   int damage;
   damage = (ataque - defesa);
@@ -19,7 +19,7 @@ int get_damage(int ataque, int defesa) {
   return damage;
 }
 
-// Função para calcular a vida após o dano
+//Função: vida restante
 int get_life(int vida, int dano) {
   int life;
   life = (vida - dano);
@@ -32,28 +32,26 @@ int get_life(int vida, int dano) {
 int main() {
   srand(time(NULL));
 
-// Players com status randomizados, sendo que eles: não podem ser 0; precisam somar 20
+//Randomizador de status
 
   int hp_P1, att_P1, def_P1;
   int hp_P2, att_P2, def_P2;
-
   do {
     hp_P1 = get_random(1,18);
     att_P1 = get_random(1,18);
     def_P1 = get_random(1,18);
   } while (hp_P1 + att_P1 + def_P1 != 18);
-
   do {
     hp_P2 = get_random(1,18);
     att_P2 = get_random(1,18);
     def_P2 = get_random(1,18);
   } while (hp_P2 + att_P2 + def_P2 != 18);
 
-// Print stats
+//Printa status
   printf("Os status do Player 1 sao: HP - %d, ATCK - %d, DEF - %d.\n", hp_P1, att_P1, def_P1);
   printf("Os status do Player 2 sao: HP - %d, ATCK - %d, DEF - %d.\n\n\n", hp_P2, att_P2, def_P2);
 
-// Combate
+//Loop: combate
   int toPlay = get_random(1,2);
 
   while (hp_P1 > 0 && hp_P2 > 0) {
