@@ -29,11 +29,11 @@ int get_life(int vida, int dano) {
   return life;
 }
 
+//MAIN
 int main() {
   srand(time(NULL));
 
 //Randomizador de status
-
   int hp_P1, att_P1, def_P1;
   int hp_P2, att_P2, def_P2;
   do {
